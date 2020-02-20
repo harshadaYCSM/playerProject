@@ -51,11 +51,20 @@ speedMinus.addEventListener('click', function(){
 playerInit();
 
 function playerInit() {
+    //player information reading
     loadJSON(json2,function(response) {
         const playerInfo = JSON.parse(response); //JSON info
         console.log(playerInfo);
         videoContent.volume = playerInfo.volume;
-    })
+        videoContent.playbackRate = playerInfo.speed;
+    });
+
+    //video information reading
+    loadJSON(json1,function(response) {
+        const videoInfo = JSON.parse(response); //JSON info
+        console.log(videoInfo);
+        videoContent.src = videoInfo.src1
+    });
 }
 
 function checkButtonState() {
@@ -66,8 +75,3 @@ function checkButtonState() {
     }
 }
 
-loadJSON(json1,function(response) {
-    const videoInfo = JSON.parse(response); //JSON info
-    console.log(videoInfo);
-    videoContent.src = videoInfo.src1
-});
