@@ -48,6 +48,7 @@ speedMinus.addEventListener('click', function(){
     }
     console.log(videoContent.playbackRate);
 });
+
 playerInit();
 
 function playerInit() {
