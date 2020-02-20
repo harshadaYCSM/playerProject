@@ -1,0 +1,22 @@
+{
+  "name": "playerDev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ads.js",
+  "scripts": {
+    "start": "webpack-dev-server --host 0.0.0.0 --hot --inline --config ./webpack/webpack.development.config.js",
+    "build": "webpack --colors --config ./webpack/webpack.production.config.js",
+    "debug": "webpack --colors --config ./webpack/webpack.debug.config.js",
+    "stylelint": "stylelint --config .stylelintrc 'src/**/*.scss'",
+    "eslint": "eslint ./src ./test ./webpack",
+    "lint": "lint-staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "webpack": "^4.41.6"
+  }
+}

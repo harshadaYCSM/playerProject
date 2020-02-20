@@ -1,0 +1,11 @@
+{
+  "src1": "Joren_Falls_Izu_Jap.mp4",
+  "src2": "big_buck_bunny.mp4",
+  "type" : ".mp4",
+  "DRM" : "SomeDRM",
+  "resolution" : {
+                  "LG" : "1080X720",
+                  "PS" :  "720X360",
+                  "SONY": "1X2"
+                  }
+}

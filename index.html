@@ -1,0 +1,199 @@
+<!--
+<hmtl>
+    <head>
+    </head>
+    <body>
+    <h3>Player</h3>
+    <div>
+        <video id="vid1" width="640" height="480" autoplay preload="auto" loop style="display : inline;
+        position:absolute;z-index:2;margin-top: 76px">
+            <source id="srclink" src="big_buck_bunny.mp4" type="video/mp4">
+        </video>
+        <video id="vid2" width="640" height="480" autoplay preload="auto" loop style="visibility: hidden;
+        display : inline;position:absolute;z-index:1;margin-top: 76px">
+        <source id="srclink2" src="Joren_Falls_Izu_Jap.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div>
+       &lt;!&ndash; TODO: Display volume&ndash;&gt;
+        &lt;!&ndash; TODO: Fullscreen&ndash;&gt;
+        &lt;!&ndash; TODO: Clicks on screen &ndash;&gt;
+
+        <div id="volume">Volume</div>
+        <button id="play" onclick="playVideo()">Play</button>
+        <button onclick="pauseVideo()">Pause</button>
+        <button onclick="mute()">Mute</button>
+        <button onclick="volumeUp()">Volume Up</button>
+        <button onclick="volumeDown()">Volume Down</button>
+        <button onclick="seekFivePlus()">+5 seconds</button>
+        <button onclick="seekFiveBack()">-5 seconds</button>
+        <button onclick="speedPlus()">Speed+</button>
+        <button onclick="speedMinus()">Speed-</button>
+        <button onclick="enterFullscreen()">Fullscreen</button>
+        &lt;!&ndash;<button onclick="playNext()">playNext</button>&ndash;&gt;
+
+    </div>
+
+    &lt;!&ndash;<div>
+        <video id="vid2" width="640" height="480" autoplay preload="auto" loop>
+            <source id="srclink2" src="Joren_Falls_Izu_Jap.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div>
+        &lt;!&ndash; TODO: Display volume&ndash;&gt;
+        &lt;!&ndash; TODO: Fullscreen&ndash;&gt;
+        &lt;!&ndash; TODO: Clicks on screen &ndash;&gt;
+
+        <div id="volume2">Volume</div>
+        <button id="play2" onclick="playPause()">Play</button>
+        &lt;!&ndash; <button onclick="playPause()">Pause</button>&ndash;&gt;
+        <button onclick="mute()">Mute</button>
+        <button onclick="volumeUp()">Volume Up</button>
+        <button onclick="volumeDown()">Volume Down</button>
+        <button onclick="seekFivePlus()">+5 seconds</button>
+        <button onclick="seekFiveBack()">-5 seconds</button>
+        <button onclick="speedPlus()">Speed+</button>
+        <button onclick="speedMinus()">Speed-</button>
+        <button onclick="enterFullscreen()">Fullscreen</button>
+        &lt;!&ndash;<button onclick="playNext()">playNext</button>&ndash;&gt;
+
+    </div>&ndash;&gt;
+
+    </body>
+    <script>
+    const videoObj = document.getElementById("vid1");
+    const source = document.getElementById("srclink");
+    const vol = document.getElementById("volume");
+    const playButton = document.getElementById("play");
+
+    const videoObj2 = document.getElementById("vid2");
+    const source2 = document.getElementById("srclink2");
+    const vol2 = document.getElementById("volume2");
+    const playButton2 = document.getElementById("play2");
+
+        console.log(source);
+        console.log("videoObj.paused"+videoObj.paused);
+        console.log("Volume" + videoObj.volume);
+        console.log("Total Duration" + videoObj.duration);
+        console.log("Current Played time" + videoObj.currentTime);
+        console.log("Playback Rate" + videoObj.playbackRate);
+
+    vol.innerText = "Volume : " + parseInt(videoObj.volume * 10);
+    //videoObj2.style.visibility = "hidden";
+
+    //Key functionality : arrow keys
+
+    function playVideo() {
+        if(videoObj.paused) {
+            videoObj.play();
+            //playButton.innerText = "Pause"
+        } /*else {
+            videoObj.pause();
+            videoObj.style.visibility = "hidden";
+            videoObj2.style.visibility = "visible";
+            playButton.innerText = "Play"
+            videoObj2.play();
+
+        }*/
+    }
+
+    function pauseVideo() {
+        videoObj.style.visibility = "hidden";
+        videoObj2.style.visibility = "visible";
+        videoObj.pause();
+        videoObj2.play();
+        videoObj2.volume = videoObj.volume;
+    }
+
+    function mute() {
+        videoObj.volume = 0;
+        console.log(videoObj.volume)
+    }
+
+    function seekFivePlus() {
+        videoObj.currentTime += 5;
+        console.log("+5 " +videoObj.currentTime)
+    }
+
+    function seekFiveBack() {
+        videoObj.currentTime -= 5;
+        console.log("-5 " +videoObj.currentTime)
+    }
+
+    function volumeUp() {
+        if (videoObj.volume === 1) {
+            console.log("max volume")
+        } else {
+            videoObj.volume += 0.1;
+        }
+        console.log(videoObj.volume);
+        vol.innerText = "Volume : " + parseInt(videoObj.volume * 10);
+    }
+
+    function volumeDown() {
+        if (videoObj.volume  < 0.1) {
+            console.log("min volume")
+        } else {
+            videoObj.volume -= 0.1;
+        }
+        console.log(videoObj.volume)
+        vol.innerText = "Volume : " + parseInt(videoObj.volume * 10);
+    }
+
+    function speedPlus() {
+        if (videoObj.playbackRate < 15) {
+            videoObj.playbackRate += 1; //max play back rate = 15
+        }
+        console.log(videoObj.playbackRate);
+    }
+
+    function speedMinus() {
+        if (videoObj.playbackRate > 1) { //cant be zero, pause
+            videoObj.playbackRate -= 1;
+        }
+        console.log(videoObj.playbackRate);
+    }
+
+    function enterFullscreen() {
+        videoObj.webkitEnterFullScreen()
+    }
+
+    function playNext() {
+        //TODO
+    }
+    </script>
+</hmtl>-->
+<html>
+<head>
+    <title>IMA HTML5 Simple Demo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+<script type="text/javascript" src="loadJson.js"></script>
+
+<div id="mainContainer">
+    <div id="content">
+        <video id="contentElement" autoplay loop>
+<!--
+            <source src="big_buck_bunny.mp4"></source>
+-->
+        </video>
+    </div>
+    <div id="adContainer"></div>
+</div>
+<button id="playButton">Play</button>
+<button id="pauseButton">Pause</button>
+<button id="volumeUp">Volume Up</button>
+<button id="volumeDown">Volume Down</button>
+<button id="speedPlus">Speed plus</button>
+<button id="speedMinus">Speed minus</button>
+<script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+
+<script type="text/javascript" src="ads.js"></script>
+<script type="text/javascript" src="player.js"></script>
+
+
+</body>
+</html>

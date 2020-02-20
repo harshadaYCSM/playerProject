@@ -1,0 +1,32 @@
+#mainContainer {
+    position: relative;
+    width: 640px;
+    height: 360px;
+}
+
+#content,
+#adContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 360px;
+}
+
+#contentElement {
+    width: 640px;
+    height: 360px;
+    overflow: hidden;
+}
+
+#playButton,
+#pauseButton,
+#volumeDown,
+#volumeUp,
+#speedMinus,
+#speedPlus{
+    margin-top:10px;
+    height: 60px;
+    padding: 15px;
+    font-size: 22px;
+}
